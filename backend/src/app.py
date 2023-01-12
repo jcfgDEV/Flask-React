@@ -1,12 +1,12 @@
 from flask import Flask, request,Response,jsonify
 from pymongo import MongoClient
 from bson import json_util,ObjectId
-
-
+from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
 app = Flask(__name__)
+CORS(app)
 client = MongoClient('mongodb+srv://ObscureBM:WfhEnDVw90w8FVSU@cluster0.imwio.mongodb.net/?retryWrites=true&w=majority')
 db = client.test
 
