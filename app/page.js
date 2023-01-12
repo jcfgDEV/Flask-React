@@ -17,7 +17,7 @@ export default function Page() {
     
 
     const GetUsers = async (e) => {
-        const res = await fetch('http://localhost:5000/usersGet')
+        const res = await fetch('https://react-flask-eu6zmpj0l-jcfgdev.vercel.app/usersGet')
         const data = await res.json()
         setMongoDB(data);
     }
@@ -28,7 +28,7 @@ export default function Page() {
 
     const PostSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch("http://localhost:5000/userAdd", {
+        const res = await fetch("https://react-flask-eu6zmpj0l-jcfgdev.vercel.app/userAdd", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export default function Page() {
 
 
     const UserDelete = async (id) => {
-        const res = await fetch(`http://localhost:5000/usersDelete/${id}`, {
+        const res = await fetch(`https://react-flask-eu6zmpj0l-jcfgdev.vercel.app/usersDelete/${id}`, {
             method: "DELETE",
           });
          const response = await res.json();
